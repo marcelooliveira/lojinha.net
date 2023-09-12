@@ -36,7 +36,7 @@
                     }
                 </select>
                 <span id="unitPrice" class="col col-3 mt-0 h6 border-left border-light text-right">@(Model.CartItem.UnitPrice.ToString("0.00"))</span>
-                <span id="total" class="col col-3 mt-0 h6 border-left border-light text-right">@(Model.CartItem.Total().ToString("0.00"))</span>
+                <span id="total" class="col col-3 mt-0 h6 border-left border-light text-right">@(Model.CartItem.Total.ToString("0.00"))</span>
             </div>
         </div>
     </div>
@@ -71,12 +71,12 @@
 
             $.ajax({
                 type: 'GET',
-                url: "/getCartItem",
+                url: "/AddToCart?handler=CartItem",
                 contentType: "application/json",
                 dataType: "json",
                 data: cartItem,
                 success: function (data) {
-                    $("#unitPrice").html('$' + Number.parseFloat(data.unit_price).toFixed(2))
+                    $("#unitPrice").html('$' + Number.parseFloat(data.unitPrice).toFixed(2))
                     $("#total").html('$' + Number.parseFloat(data.total).toFixed(2))
                 }
             })

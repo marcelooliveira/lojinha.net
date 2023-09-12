@@ -18,8 +18,8 @@ public class CartItem : BaseEntity
         Quantity = quantity;
     }
 
-    public decimal Total()
+    public decimal Total
     {
-        return Quantity * UnitPrice;
+        get { return Quantity * UnitPrice; }
     }
 }

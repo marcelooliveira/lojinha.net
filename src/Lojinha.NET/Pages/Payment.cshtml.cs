@@ -7,8 +7,6 @@ public class PaymentModel : PageModel
 {
     private readonly ILogger<PaymentModel> _logger;
 
-    // public List<CartItem> CartItems { get; set; }
-
     public PaymentModel(ILogger<PaymentModel> logger)
     {
         _logger = logger;
