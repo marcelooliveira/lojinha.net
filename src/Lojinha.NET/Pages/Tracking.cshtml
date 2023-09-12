@@ -1,12 +1,12 @@
 @page
 @model TrackingModel
 @{
-    ViewData["Title"] = "Orders Tracking";
+    ViewData["Title"] = "Acompanhamento de Pedidos";
 }
 
 <div class="row mt-4">
     <div class="col col-md-8 offset-md-2 alert alert-primary bg-success text-white text-center">
-        <span class="h3">🚚 ORDERS PREPARED FOR DELIVERY</span>
+        <span class="h3">🚚 PEDIDOS PREPARADOS PARA ENVIO</span>
     </div>
 </div>
 
@@ -14,8 +14,8 @@
     <div class="col col-md-8 offset-md-2">
         <div class="row alert alert-warning bg-dark text-white">
             <span class="col col-2 mt-0 h6 border-left border-light">Id</span>
-            <span class="col col-4 mt-0 h6 border-left border-light">Placement</span>
-            <span class="col col-3 mt-0 h6 border-left border-light">Item Count</span>
+            <span class="col col-4 mt-0 h6 border-left border-light">Data</span>
+            <span class="col col-3 mt-0 h6 border-left border-light">No. Itens</span>
             <span class="col col-3 mt-0 h6 border-left border-light text-right">Total</span>
         </div>
         @foreach(var order in Model.OrdersForDelivery)
@@ -32,7 +32,7 @@
 
 <div class="row mt-4">
     <div class="col col-md-8 offset-md-2 alert alert-primary bg-danger text-white text-center">
-        <span class="h3">🚫 ORDERS WITH REJECTED PAYMENT</span>
+        <span class="h3">🚫 PEDIDOS COM PAGAMENTO REJEITADO</span>
     </div>
 </div>
 
@@ -40,8 +40,8 @@
     <div class="col col-md-8 offset-md-2">
         <div class="row alert alert-warning bg-dark text-white">
             <span class="col col-2 mt-0 h6 border-left border-light">Id</span>
-            <span class="col col-4 mt-0 h6 border-left border-light">Placement</span>
-            <span class="col col-3 mt-0 h6 border-left border-light">ItemCount</span>
+            <span class="col col-4 mt-0 h6 border-left border-light">Data</span>
+            <span class="col col-3 mt-0 h6 border-left border-light">No. Itens</span>
             <span class="col col-3 mt-0 h6 border-left border-light text-right">Total</span>
         </div>
         @foreach(var order in Model.OrdersRejected)

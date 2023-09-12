@@ -28,9 +28,9 @@ namespace Lojinha.NET
         {
             _cartItems = new Dictionary<int, CartItem>
             {
-                { 17, new CartItem(1, 17, "🥥", "Coconut", 4.50m, 2) },
-                { 13, new CartItem(2, 13, "🍒", "Cherries box", 3.50m, 3) },
-                { 4, new CartItem(3, 4, "🍊", "Tangerine box", 3.50m, 1) }
+                { 17, new CartItem(1, 17, "🥥", "Coco (un)", 4.50m, 2) },
+                { 13, new CartItem(2, 13, "🍒", "Cereja (kg)", 3.50m, 3) },
+                { 4, new CartItem(3, 4, "🍊", "Tangerina (kg)", 3.50m, 1) }
             };
 
             _ordersAwaitingPayment = new Queue<Order>(new[]
@@ -56,7 +56,6 @@ namespace Lojinha.NET
             _maxOrderId = 1008;
         }
 
-        // Obtain shopping cart items
         public List<CartItem> GetCartItems()
         {
             var items = _cartItems.Values.ToList();
@@ -64,7 +63,7 @@ namespace Lojinha.NET
             return items;
         }
 
-        // Add one item to shopping cart
+        // Adiciona um item ao carrinho de compras
         public void AddCartItem(CartItem cartItem)
         {
             var products = GetProductList();
@@ -111,7 +110,7 @@ namespace Lojinha.NET
             _ordersRejected.Enqueue(order);
         }
 
-        // Create a new order and clear the shopping cart
+        // Cria um novo pedido e limpa o carrinho de compras
         public void CheckOut()
         {
             _maxOrderId++;

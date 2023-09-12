@@ -1,5 +1,5 @@
 
-// Represents a shopping cart order
+// Representa um pedido
 public class Order : BaseEntity
 {
     public DateTime Placement { get; set; }
