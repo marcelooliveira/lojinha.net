@@ -14,7 +14,17 @@ namespace Lojinha.NET
         private Queue<Order> _ordersRejected;
         private int _maxOrderId;
 
-        public ECommerceData()
+        private static ECommerceData? instance;
+        public static ECommerceData Instance
+        {
+            get
+            {
+                instance ??= new ECommerceData();
+                return instance;
+            }
+        }
+
+        private ECommerceData()
         {
             _cartItems = new Dictionary<int, CartItem>
             {

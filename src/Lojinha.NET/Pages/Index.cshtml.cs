@@ -7,18 +7,16 @@ public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
 
-    private ECommerceData eCommerceData = new();
-
     public List<CartItem> CartItems { get; set; }
 
     public IndexModel(ILogger<IndexModel> logger)
     {
+        CartItems = ECommerceData.Instance.GetCartItems();
         _logger = logger;
     }
 
     public IActionResult OnGet()
     {
-        CartItems = eCommerceData.GetCartItems();
         return Page();
     }
 
@@ -31,7 +29,7 @@ public class IndexModel : PageModel
 
         if (Request.Form.Keys.Contains("checkoutSubmit"))
         {
-            eCommerceData.CheckOut();
+            ECommerceData.Instance.CheckOut();
         }
 
         return OnGet();
