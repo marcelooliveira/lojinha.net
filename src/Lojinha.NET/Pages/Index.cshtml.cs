@@ -11,13 +11,12 @@ public class IndexModel : PageModel
 
     public IndexModel(ILogger<IndexModel> logger)
     {
-        CartItems = ECommerceData.Instance.GetCartItems();
         _logger = logger;
     }
 
-    public IActionResult OnGet()
+    public void OnGet()
     {
-        return Page();
+        CartItems = ECommerceData.Instance.GetCartItems();
     }
 
     public IActionResult OnPost()
@@ -32,6 +31,6 @@ public class IndexModel : PageModel
             ECommerceData.Instance.CheckOut();
         }
 
-        return OnGet();
+        return Redirect("/");
     }
 }
